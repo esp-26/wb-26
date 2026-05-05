@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sakurado Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Sofia+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFCF7;
+    --cream-deep: #FFF4E7;
+    --peach-soft: #FCE9CB;
+    --peach: #FEDEB5;
+    --orange-soft: #FDB664;
+    --orange: #F7902D;
+    --terracotta: #7C3A2D;
+    --black: #101820;
+    --pink: #F9B5C4;
+    --pink-light: #F5DADF;
+    --text: #2C2826;
+    --text-muted: #6B635D;
+    --border: rgba(124, 58, 45, 0.15);
+    --border-strong: rgba(124, 58, 45, 0.3);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --logo-serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Sofia Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    font-weight: 400;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+  }
+  .sidebar {
+    background: var(--cream-deep);
+    border-right: 1px solid var(--border);
+    padding: 3rem 2rem 3rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .sidebar-brand {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-logo {
+    font-family: var(--logo-serif);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--terracotta);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-tagline {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--orange);
+  }
+  .sidebar-section-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    margin: 1.5rem 0 0.75rem;
+  }
+  .sidebar-nav { list-style: none; }
+  .sidebar-nav li { margin-bottom: 0.25rem; }
+  .sidebar-nav a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    border-left: 2px solid transparent;
+    padding-left: 0;
+  }
+  .sidebar-nav a:hover, .sidebar-nav a.active {
+    color: var(--terracotta);
+    padding-left: 8px;
+    border-left-color: var(--orange);
+  }
+  .sidebar-nav a.active { font-weight: 500; }
+  .sidebar-meta {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .content { padding: 4rem 5rem; max-width: 920px; }
+  .section { margin-bottom: 6rem; scroll-margin-top: 2rem; }
+  .section:last-child { margin-bottom: 2rem; }
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--terracotta);
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--terracotta);
+    margin-bottom: 1.5rem;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.25;
+    color: var(--terracotta);
+    margin: 2.5rem 0 1rem;
+  }
+  h4 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text);
+    margin: 2rem 0 1rem;
+  }
+  p { margin-bottom: 1.25rem; font-size: 16px; line-height: 1.75; color: var(--text); }
+  .lead {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  .lead em { font-style: italic; color: var(--terracotta); }
+  ul, ol { margin: 0 0 1.5rem 1.5rem; }
+  li { margin-bottom: 0.5rem; line-height: 1.7; }
+  strong { font-weight: 500; color: var(--terracotta); }
+  .hero {
+    padding: 5rem 0 6rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 5rem;
+  }
+  .hero h1 { font-size: 72px; margin-bottom: 2rem; }
+  .hero-meta {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+  .hero-meta-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 10px;
+    color: var(--orange);
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .card-quiet {
+    background: var(--cream-deep);
+    padding: 2rem 2.25rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border-left: 2px solid var(--orange);
+  }
+  .version-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .version-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: -1px;
+  }
+  .version-tab:hover { color: var(--terracotta); }
+  .version-tab.active { color: var(--terracotta); border-bottom-color: var(--orange); }
+  .version-content { display: none; }
+  .version-content.active { display: block; }
+  .story-text p {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .story-text p:first-child {
+    font-size: 26px;
+    color: var(--terracotta);
+    font-style: italic;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+  .colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .color-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .color-swatch { height: 120px; width: 100%; }
+  .color-info { padding: 1rem 1.25rem; }
+  .color-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--terracotta);
+    margin-bottom: 0.5rem;
+  }
+  .color-codes {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-family: var(--sans);
+  }
+  .color-codes div { margin-bottom: 2px; }
+  .font-preview {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .font-preview-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+  }
+  .font-preview-display { margin-bottom: 1rem; }
+  .font-preview-meta {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: var(--sans);
+  }
+  .voice-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .voice-cell {
+    padding: 1.5rem 1.75rem;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .voice-no { background: rgba(124, 58, 45, 0.04); border: 1px solid rgba(124, 58, 45, 0.15); }
+  .voice-yes { background: rgba(247, 144, 45, 0.06); border: 1px solid rgba(247, 144, 45, 0.2); }
+  .voice-cell-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.75rem;
+  }
+  .voice-no .voice-cell-label { color: #B85C4D; }
+  .voice-yes .voice-cell-label { color: var(--orange); }
+  .banned-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .banned-category {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+  }
+  .banned-category-title {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+  .banned-category ul { margin: 0; list-style: none; }
+  .banned-category li {
+    font-size: 14px;
+    padding: 0.25rem 0;
+    color: var(--text);
+    border-bottom: 1px dotted var(--border);
+  }
+  .banned-category li:last-child { border-bottom: none; }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  .value-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem 2.25rem;
+  }
+  .value-number {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  .value-name {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--terracotta);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+  }
+  .value-description { font-size: 15px; color: var(--text); line-height: 1.6; }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .logo-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .logo-display {
+    background: var(--cream);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .logo-display.dark { background: var(--black); }
+  .logo-display.orange { background: var(--orange); }
+  .logo-info { padding: 1.25rem; }
+  .logo-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--terracotta);
+    margin-bottom: 0.5rem;
+  }
+  .logo-use { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+  .tagline-card {
+    background: var(--cream-deep);
+    border-radius: 4px;
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 2px solid var(--orange);
+  }
+  .tagline-display {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--terracotta);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .tagline-context { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .tagline-context strong { color: var(--text); }
+  .rule {
+    background: rgba(247, 144, 45, 0.06);
+    border-left: 2px solid var(--orange);
+    padding: 1.25rem 1.75rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .rule-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+  }
+  .rule-text { font-size: 15px; color: var(--text); line-height: 1.6; }
+  .asset-placeholder {
+    background: var(--cream-deep);
+    border: 1px dashed var(--border-strong);
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .asset-placeholder-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+  }
+  .asset-placeholder-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .data-table th {
+    background: var(--cream-deep);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--terracotta);
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .translator {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+  }
+  .translator h4 { margin-top: 0; }
+  .translator-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dotted var(--border);
+  }
+  .translator-row:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .translator-cell h5 {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .translator-cell p { font-size: 14px; line-height: 1.6; margin-bottom: 0; }
+  .translator-from { color: var(--text-muted); font-style: italic; }
+  .translator-to { color: var(--text); font-weight: 400; }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+    .content { padding: 3rem 1.5rem; }
+    h1 { font-size: 42px; }
+    .hero h1 { font-size: 48px; }
+    h2 { font-size: 32px; }
+    .voice-comparison, .banned-grid, .translator-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo">SAKURA-DO</div>
+      <div class="sidebar-tagline">Brand Book · 2026</div>
+    </div>
+
+    <div class="sidebar-section-label">Foundation</div>
+    <ul class="sidebar-nav">
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#story">Founder story</a></li>
+      <li><a href="#positioning">Positioning</a></li>
+      <li><a href="#values">Brand values</a></li>
+    </ul>
+
+    <div class="sidebar-section-label">Voice</div>
+    <ul class="sidebar-nav">
+      <li><a href="#voice-principles">Principles</a></li>
+      <li><a href="#voice-vocabulary">Vocabulary</a></li>
+      <li><a href="#voice-examples">Examples</a></li>
+      <li><a href="#voice-banned">Banned phrases</a></li>
+      <li><a href="#voice-translator">Voice translator</a></li>
+    </ul>
+
+    <div class="sidebar-section-label">Visual</div>
+    <ul class="sidebar-nav">
+      <li><a href="#logos">Logos</a></li>
+      <li><a href="#colour">Colour</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#photography">Photography</a></li>
+    </ul>
+
+    <div class="sidebar-section-label">Application</div>
+    <ul class="sidebar-nav">
+      <li><a href="#packaging">Packaging</a></li>
+      <li><a href="#in-store">In-store experience</a></li>
+      <li><a href="#naming">Naming &amp; conventions</a></li>
+      <li><a href="#taglines">Brand lines</a></li>
+    </ul>
+
+    <div class="sidebar-section-label">Resources</div>
+    <ul class="sidebar-nav">
+      <li><a href="#assets">Asset library</a></li>
+    </ul>
+
+    <div class="sidebar-meta">
+      Built May 2026<br>
+      Owned by Mei, Emily &amp; Gabrielle<br>
+      For Sakurado team use
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <section class="hero">
+      <div class="eyebrow">The Sakurado Brand Book</div>
+      <h1>House of cherry blossoms.</h1>
+      <p class="lead">A working document for the people who build Sakurado. A place to find the brand, understand the voice, and use the tools well. <em>Always growing. Always considered.</em></p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Edition</span>
+          <span>v1.0 · May 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">For</span>
+          <span>Internal team &amp; partners</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Owners</span>
+          <span>Mei, Emily &amp; Gabrielle</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="welcome" class="section">
+      <div class="eyebrow">Welcome</div>
+      <h2>How to use this book.</h2>
+      <p class="lead">This is the source of truth for what Sakurado is, how it sounds, how it looks, and how it shows up in the world.</p>
+
+      <h3>Who this is for</h3>
+      <p>The people who shape Sakurado day to day. The team in the cafés. The kitchen. Our social media manager, photographer, and content creator. Future hires. Suppliers and printers. Anyone writing copy, designing materials, or representing the brand to customers.</p>
+
+      <h3>How it works</h3>
+      <p>Use the sidebar to navigate. Each section can be read on its own. Start with Foundation if you are new to the brand. Jump to Voice or Visual if you need a specific rule.</p>
+
+      <h3>How it stays alive</h3>
+      <p>This book is a living document. As the brand grows, so will what is in here. If a rule is missing or no longer fits, raise it with Emily so we can update it properly.</p>
+    </section>
+
+    <section id="story" class="section">
+      <div class="eyebrow">Foundation · The story</div>
+      <h2>Sakurado began with a memory and a missing flavour.</h2>
+
+      <p class="lead">There are two versions of this story. The long version lives here in the brand book and includes the full family history. The web version is shorter and acknowledges co-founder Ernest. Use the right one for the right context.</p>
+
+      <div class="version-tabs">
+        <button class="version-tab active" data-version="long">Long version</button>
+        <button class="version-tab" data-version="web">Web version</button>
+        <button class="version-tab" data-version="short">Short forms</button>
+      </div>
+
+      <div class="version-content active" data-version="long">
+        <div class="story-text">
+          <p>Sakurado began with a memory and a missing flavour.</p>
+          <p>In 1993, Mei left China for Japan to study the language. She stayed for five years. She studied, she worked, she met her husband. She lived next door to a bakery, and stepped out to the smell of fresh Japanese bread every morning. She fell deeply in love with a country that took dessert as seriously as her grandfather had taken bread. He had run a bakery in China when she was a child, and Mei had grown up among flour, sugar, and the quiet rhythm of a working kitchen. Japan didn't teach her to love sweets. That was already in her. But it taught her how sweets could be made.</p>
+          <p>What she found there changed how she thought about dessert. Japanese sweets are never too sweet. They are balanced and considered. They leave space for the ingredients to speak. When she returned to the UK, every cake felt sugar-heavy, every dessert too rich. The balance she had come to love simply wasn't here.</p>
+          <p>So she made it.</p>
+          <p>Mei founded Sakurado in 2017, beginning quietly out of the back of a fish and chip shop in Putney. She opened the first Sakurado café in Kensington soon after, and the business has since grown to five cafés across London, and a kitchen full of people who share Mei's belief that a good cake is one you finish, not one you push away.</p>
+          <p>Today, Sakurado is run by Mei alongside her family. Her husband is the financial director. Her daughters Emily and Gabrielle now work in the business too. It is, in every sense, a family-run business, and the philosophy that connects every cake we make is the same one Mei brought back from Tokyo: a dessert should respect its eater, not overwhelm them.</p>
+          <p>The name Sakurado means "house of the cherry blossoms." It is a nod to the Tokyo neighbourhood where Mei lived, where sakura trees lined the river by her home. Hanami, the Japanese tradition of gathering to honour the brief bloom, sits at the heart of the brand. Beauty is fleeting. Craft is patient. Sweetness should be earned.</p>
+        </div>
+      </div>
+
+      <div class="version-content" data-version="web">
+        <div class="story-text">
+          <p>Sakurado began with a memory and a missing flavour.</p>
+          <p>In 1993, Mei left China for Japan to study the language. She stayed for five years. She studied, she worked, she met her husband. She lived next door to a bakery, and stepped out to the smell of fresh Japanese bread every morning. She fell deeply in love with a country that took dessert as seriously as her grandfather had taken bread. He had run a bakery in China when she was a child, and Mei had grown up among flour, sugar, and the quiet rhythm of a working kitchen. Japan didn't teach her to love sweets. That was already in her. But it taught her how sweets could be made.</p>
+          <p>What she found there changed how she thought about dessert. Japanese sweets are never too sweet. They are balanced and considered. They leave space for the ingredients to speak. When she returned to the UK, every cake felt sugar-heavy, every dessert too rich. The balance she had come to love simply wasn't here.</p>
+          <p>So she made it.</p>
+          <p>Mei founded Sakurado in 2017, beginning quietly out of the back of a fish and chip shop in Putney. She opened the first Sakurado café in Kensington soon after, alongside co-founder Ernest. The business has since grown to five cafés across London, and a kitchen full of people who share Mei's belief that a good cake is one you finish, not one you push away.</p>
+          <p>The name Sakurado means "house of the cherry blossoms." It is a nod to the Tokyo neighbourhood where Mei lived, where sakura trees lined the river by her home. Hanami, the Japanese tradition of gathering to honour the brief bloom, sits at the heart of the brand. Beauty is fleeting. Craft is patient. Sweetness should be earned.</p>
+          <p>Sakurado is built on a single quiet philosophy: a dessert should respect its eater, not overwhelm them.</p>
+        </div>
+      </div>
+
+      <div class="version-content" data-version="short">
+        <div class="card-quiet">
+          <div class="font-preview-label">Short version · For social bios, packaging, intro lines</div>
+          <p style="font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--terracotta); margin-bottom: 0; font-style: italic;">Sakurado began with a memory and a missing flavour. A family-run Japanese patisserie founded by Mei in 2017. Made fresh in London. Never too sweet.</p>
+        </div>
+        <div class="card-quiet">
+          <div class="font-preview-label">One-line version · For ads, headers, brief intros</div>
+          <p style="font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--terracotta); margin-bottom: 0; font-style: italic;">A family-run Japanese patisserie. Made fresh in London. Never too sweet.</p>
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-label">Use the right version</div>
+        <div class="rule-text">Public-facing communications (website, press releases, journalist interviews, third-party listings) use the web version, which acknowledges co-founder Ernest. Internal materials, team onboarding, brand decks, and any context where the family-run nature is part of the story use the long version. The short and one-line forms work everywhere.</div>
+      </div>
+    </section>
+
+    <section id="positioning" class="section">
+      <div class="eyebrow">Foundation · Positioning</div>
+      <h2>Premium-but-warm. Approachable luxury.</h2>
+
+      <p class="lead">Sakurado sits in a specific place in the market. Not cold luxury. Not casual high street. <em>Premium-but-warm</em> — refined craft delivered with warmth, intimacy, and the personality of a family-run business.</p>
+
+      <h3>What this means in practice</h3>
+      <p>Premium brands tend to feel cold and intimidating. Casual brands tend to feel cheap and disposable. Sakurado lives in the rare space where quality and warmth meet.</p>
+
+      <p>The reference brands we look to are Aesop, Le Labo, Diptyque, Ffern, and Astrid &amp; Miyu. Each of these brands is unmistakably premium, yet feels human, considered, and inviting. Sakurado belongs in this group.</p>
+
+      <h3>Our customer</h3>
+      <p>The bullseye Sakurado customer is a 25 to 40 year old professional who treats themselves with intention. They care about quality, beauty, and provenance. They notice the way a cake is presented and the way they feel after eating it. They are the kind of person who would rather have one excellent slice than three average ones.</p>
+
+      <p>Around the bullseye sit two important wider audiences: <strong>celebration cake customers</strong> (birthdays, weddings, baby showers, custom occasions) who come to Sakurado for a piece of memory-worthy craft, and <strong>gift-givers</strong> who choose Sakurado because the box itself is an experience.</p>
+
+      <h3>The Japanese sensibility</h3>
+      <p>Japanese desserts hold something European patisserie often does not: balance. They are sweet, but not too sweet. Refined, but not austere. Playful, but not childish. This sensibility runs through every Sakurado product, from the lightest mille crepe to the most decorative bear-shaped choux. Refinement and warmth are not opposites in Japanese culture. They live together.</p>
+
+      <h3>What makes us different</h3>
+      <ul>
+        <li><strong>Never too sweet.</strong> A real product truth that customers consistently notice and love. Born of Mei's Japanese training and London discovery.</li>
+        <li><strong>Made fresh, every day.</strong> Mochi made to order. Cakes prepared in our central kitchen. No long-life shelves, no factory production.</li>
+        <li><strong>Family-run.</strong> A mother and her daughters at the centre of the business, with depth of vision and personal care behind every decision.</li>
+        <li><strong>Range with depth.</strong> Five cafés, a thriving celebration cake practice, and a menu that has been refined and curated over years. Jiggly cheesecake, strawberry shortcake, and matcha mille crepe lead our retail bestsellers.</li>
+        <li><strong>Cultural authenticity.</strong> Our products are rooted in real Japanese tradition, not borrowed aesthetic. Sakura. Hanami. Wagashi. Tanuki. We honour what we draw from.</li>
+      </ul>
+    </section>
+
+    <section id="values" class="section">
+      <div class="eyebrow">Foundation · Values</div>
+      <h2>Five things we believe.</h2>
+      <p class="lead">These are not internal employee values. Those live in the team handbook. These are what Sakurado <em>stands for in the world</em>.</p>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-number">i.</div>
+          <div class="value-name">Balance</div>
+          <div class="value-description">Not too sweet. Not too heavy. Considered in everything. Restraint is a sign of confidence, not lack.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-number">ii.</div>
+          <div class="value-name">Craft</div>
+          <div class="value-description">Made by hand. Made fresh. Made by people who care. The work shows in the result, even when nobody is looking.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-number">iii.</div>
+          <div class="value-name">Heritage</div>
+          <div class="value-description">Rooted in Japan, made in London, run by family. Every cake carries a story. We honour the cultures we draw from.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-number">iv.</div>
+          <div class="value-name">Warmth</div>
+          <div class="value-description">Premium without being cold. Refined without being distant. We greet every guest like someone we are glad to see.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-number">v.</div>
+          <div class="value-name">Joy</div>
+          <div class="value-description">A cake should make you smile, even before you eat it. Beauty matters. Delight matters. The little moment of opening the box is part of the gift.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice-principles" class="section">
+      <div class="eyebrow">Voice</div>
+      <h2>How Sakurado sounds.</h2>
+
+      <p class="lead">Sakurado writes like a small, considered Japanese patisserie that takes its craft seriously and its customers warmly. We are working towards this voice across the website, social, and packaging. Existing copy will be updated over time to reflect it.</p>
+
+      <h3>Three voice principles</h3>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">01. Considered</h4>
+        <p>Every word earns its place. Avoid filler. Avoid clichés. Avoid generic premium language. If a sentence could appear on any other patisserie's website, rewrite it.</p>
+      </div>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">02. Warm</h4>
+        <p>Friendly but never overfamiliar. We write the way we would speak to a curious friend who walked into the shop. Premium does not mean distant.</p>
+      </div>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">03. Confident</h4>
+        <p>We do not shout, we do not beg, we do not over-explain. If something is beautiful, we describe it once, well. We have an opinion. We are not afraid to express it.</p>
+      </div>
+<div class="card">
+  <h4 style="color: var(--orange); margin-top: 0;">04. Playful</h4>
+  <p>A light playfulness sits underneath the voice. Affectionate, slightly cheeky, never trying too hard. Especially with our cakes that are inherently fun (the bears, the characters, the seasonal pieces).</p>
+</div>
+      <h3>Tone by context</h3>
+      <p>The voice is not a single fixed register. It adjusts to the product and the moment. A wedding cake calls for restraint and atmosphere. A Bear Custard Choux calls for warmth and small playfulness. The same brand, the same principles, expressed at different volumes.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Context</th>
+            <th>Tone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Wedding cakes, mille crepes, ceremonial matcha</td><td>Restrained, considered, sensorial</td></tr>
+          <tr><td>Mochi, daily product range, café content</td><td>Warm, considered, lightly playful</td></tr>
+          <tr><td>Character cakes (Totoro, Miffy, Jellycat, bear choux)</td><td>Adorable but composed. Charm, not silliness.</td></tr>
+          <tr><td>Founder voice, story content, newsletter</td><td>Personal, reflective, generous</td></tr>
+          <tr><td>Customer service, replies, comments</td><td>Warm, attentive, occasionally witty</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Emojis</h3>
+      <p>Emoji usage is at the discretion of the social media manager. Use sparingly and in line with the brand voice. The cherry blossom 🌸 is a recurring brand-aligned choice. Warm tones (orange heart, sun) suit the palette. Otherwise, judgment over rules.</p>
+    </section>
+
+    <section id="voice-vocabulary" class="section">
+      <div class="eyebrow">Voice</div>
+      <h2>Words we use.</h2>
+      <p class="lead">A working vocabulary that feels Sakurado. Not exhaustive. A reference for what lands.</p>
+
+      <div class="banned-grid">
+        <div class="banned-category">
+          <div class="banned-category-title">Quality &amp; craft</div>
+          <ul>
+            <li>Made fresh</li><li>Made by hand</li><li>Crafted</li><li>Refined</li><li>Considered</li><li>Balanced</li><li>Carefully sourced</li><li>Fresh, high-quality ingredients</li><li>Small batch</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">Style &amp; feel</div>
+          <ul>
+            <li>Modern</li><li>Premium</li><li>Family-run</li><li>Bespoke</li><li>Customisable</li><li>Cute</li><li>Aesthetic</li><li>Beautiful</li><li>Quietly</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">Japanese sensibility</div>
+          <ul>
+            <li>Japanese</li><li>Tokyo</li><li>Sakura</li><li>Hanami</li><li>Never too sweet</li><li>Light, never heavy</li><li>Wagashi</li><li>Mochi</li><li>Matcha</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">Texture words for products</div>
+          <ul>
+            <li>Soft</li><li>Light</li><li>Layered</li><li>Delicate</li><li>Fluffy</li><li>Pillowy</li><li>Jiggly (for Japanese cheesecake)</li><li>Earthy (for matcha)</li><li>Bright</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Punctuation</h3>
+      <div class="rule">
+        <div class="rule-label">No em-dashes</div>
+        <div class="rule-text">The em-dash ( — ) is avoided across all Sakurado writing. Use full stops, commas, colons, semicolons, parentheses, or simple line breaks instead.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-label">Exclamation marks, sparingly</div>
+        <div class="rule-text">No multiple exclamation marks. One only when the moment genuinely calls for it.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-label">Sentence case for body copy</div>
+        <div class="rule-text">Title Case is reserved for product names. Use italics or weight for emphasis rather than ALL CAPS.</div>
+      </div>
+    </section>
+
+    <section id="voice-examples" class="section">
+      <div class="eyebrow">Voice</div>
+      <h2>Show, don't tell.</h2>
+      <p class="lead">The voice is easier to feel than describe. These before and afters show what changes when copy gets pulled into the Sakurado tone.</p>
+
+      <h3>Product description</h3>
+      <div class="voice-comparison">
+        <div class="voice-cell voice-no">
+          <div class="voice-cell-label">Not us</div>
+          Indulge in our delicious Matcha Mille Crepe! A heavenly, decadent treat made with love and the perfect blend of premium matcha. A must-try for matcha lovers!
+        </div>
+        <div class="voice-cell voice-yes">
+          <div class="voice-cell-label">Us</div>
+          Layers of delicate crepe and matcha cream, balanced so the matcha leads. Made fresh in our kitchen each morning. Our bestseller for a reason.
+        </div>
+      </div>
+
+      <h3>Social caption</h3>
+      <div class="voice-comparison">
+        <div class="voice-cell voice-no">
+          <div class="voice-cell-label">Not us</div>
+          OMG our new Matcha Crunch just dropped and it's literally to die for!! Run don't walk to grab one before they sell out!!!
+        </div>
+        <div class="voice-cell voice-yes">
+          <div class="voice-cell-label">Us</div>
+          The Matcha Crunch is here. Quietly green, lightly bitter, properly crunchy. Our newest, available across all five cafés.
+        </div>
+      </div>
+
+      <h3>Newsletter intro</h3>
+      <div class="voice-comparison">
+        <div class="voice-cell voice-no">
+          <div class="voice-cell-label">Not us</div>
+          Hi, we're SO excited to announce our amazing new spring collection, full of delicious treats that are perfect for the season! You're going to love everything we've created!
+        </div>
+        <div class="voice-cell voice-yes">
+          <div class="voice-cell-label">Us</div>
+          Spring brings sakura, and sakura brings the collection we look forward to all year. A few new pieces, a few returning favourites. Available from Friday across all our cafés.
+        </div>
+      </div>
+
+      <h3>Bespoke / wedding enquiry response</h3>
+      <div class="voice-comparison">
+        <div class="voice-cell voice-no">
+          <div class="voice-cell-label">Not us</div>
+          Thank you so much for your enquiry about your special day! We would be absolutely thrilled to create the celebration cake of your dreams! Please send us all your ideas and we will get back to you shortly!
+        </div>
+        <div class="voice-cell voice-yes">
+          <div class="voice-cell-label">Us</div>
+          Thank you for the enquiry. We'd love to design something for the wedding. Could you share the date, the venue, and any flavours or styles drawing you in? Once we have a sense of the day, we'll come back with a proposal and a quote.
+        </div>
+      </div>
+    </section>
+
+    <section id="voice-banned" class="section">
+      <div class="eyebrow">Voice</div>
+      <h2>Phrases we avoid.</h2>
+      <p class="lead">A working list of words and phrases to keep out of Sakurado writing. Some are clichés. Some are AI-generic. Some sound cheap.</p>
+
+      <div class="banned-grid">
+        <div class="banned-category">
+          <div class="banned-category-title">Casual / cringe</div>
+          <ul>
+            <li>yummy, delish, scrumptious</li><li>divine, heavenly</li><li>to die for</li><li>OMG</li><li>bestie, queen, icon</li><li>literally, low-key, slay</li><li>mouth-watering</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">Generic premium clichés</div>
+          <ul>
+            <li>indulge, indulgent</li><li>decadent, luxurious, exquisite</li><li>treat yourself, you deserve it</li><li>pamper, spoil, elevated</li><li>crafted with love, made with care</li><li>made with passion</li><li>the perfect gift, the perfect treat</li><li>world-class, best-in-class</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">AI-generated tells</div>
+          <ul>
+            <li>embark on a journey</li><li>discover the world of</li><li>a symphony of flavours</li><li>a celebration of [anything]</li><li>it's not just X, it's Y</li><li>whether you're [A] or [B]</li><li>look no further</li><li>em-dashes ( — )</li><li>adjective stacking</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">Generic food clichés</div>
+          <ul>
+            <li>foodie, foodies</li><li>the ultimate, the perfect</li><li>game-changer, next-level</li><li>a must-try</li><li>multiple !!!</li><li>ellipses for drama...</li><li>ALL CAPS for emphasis</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">Wedding clichés</div>
+          <ul>
+            <li>your special day</li><li>make memories</li><li>once-in-a-lifetime</li><li>the celebration of your dreams</li><li>the cake of your dreams</li>
+          </ul>
+        </div>
+        <div class="banned-category">
+          <div class="banned-category-title">Use sparingly only</div>
+          <ul>
+            <li>obsessed (only in casual social context)</li><li>drool, drooling (only in casual social context)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice-translator" class="section">
+      <div class="eyebrow">Voice</div>
+      <h2>The voice translator.</h2>
+      <p class="lead">A working library of common phrases reworded into the Sakurado voice. Use as a quick reference.</p>
+
+      <div class="translator">
+        <h4>Product copy</h4>
+        <div class="translator-row">
+          <div class="translator-cell"><h5>Generic</h5><p class="translator-from">A delicious, indulgent treat that you'll absolutely love!</p></div>
+          <div class="translator-cell"><h5>Sakurado</h5><p class="translator-to">A small piece of something we make with care.</p></div>
+        </div>
+        <div class="translator-row">
+          <div class="translator-cell"><h5>Generic</h5><p class="translator-from">Made with the finest, freshest ingredients sourced from around the world.</p></div>
+          <div class="translator-cell"><h5>Sakurado</h5><p class="translator-to">Made fresh in our kitchen with ingredients we choose carefully.</p></div>
+        </div>
+        <div class="translator-row">
+          <div class="translator-cell"><h5>Generic</h5><p class="translator-from">A decadent, rich, creamy, indulgent dessert experience!</p></div>
+          <div class="translator-cell"><h5>Sakurado</h5><p class="translator-to">Light cream, real fruit, balanced sweetness. The way Mei always intended.</p></div>
+        </div>
+      </div>
+
+      <div class="translator">
+        <h4>Promotional language</h4>
+        <div class="translator-row">
+          <div class="translator-cell"><h5>Generic</h5><p class="translator-from">Treat yourself to our amazing new collection!</p></div>
+          <div class="translator-cell"><h5>Sakurado</h5><p class="translator-to">Our new collection is here.</p></div>
+        </div>
+        <div class="translator-row">
+          <div class="translator-cell"><h5>Generic</h5><p class="translator-from">A must-try for any matcha lover!</p></div>
+          <div class="translator-cell"><h5>Sakurado</h5><p class="translator-to">For people who take their matcha seriously.</p></div>
+        </div>
+        <div class="translator-row">
+          <div class="translator-cell"><h5>Generic</h5><p class="translator-from">The perfect gift for your loved ones!</p></div>
+          <div class="translator-cell"><h5>Sakurado</h5><p class="translator-to">A box worth giving.</p></div>
+        </div>
+      </div>
+
+      <h3>For longer copy</h3>
+      <p>Write a first draft naturally, then run it against the three principles: Considered. Warm. Confident. Cut anything that doesn't earn its place. Replace any banned phrases. Read it aloud. If it sounds like a brochure, rewrite it.</p>
+
+      <div class="rule">
+        <div class="rule-label">Translator prompt for AI tools</div>
+        <div class="rule-text" style="font-family: var(--sans); font-size: 13px; background: white; padding: 1rem; border-radius: 4px; margin-top: 0.75rem;">
+          "Rewrite the following in the Sakurado brand voice: considered (every word earns its place, no clichés or filler), warm (friendly but never overfamiliar), confident (no shouting, no over-explaining, trust the reader). No em-dashes. No exclamation marks unless absolutely necessary. No phrases like 'indulge', 'decadent', 'must-try', 'treat yourself', 'crafted with love', or 'a journey of flavour'. Premium-but-warm Japanese patisserie. Restrained, modern, considered."
+        </div>
+      </div>
+    </section>
+
+    <section id="logos" class="section">
+      <div class="eyebrow">Visual</div>
+      <h2>The logos.</h2>
+      <p class="lead">Three official logo versions. Each has a job. Use the right one for the context. Never recreate, recolour, or modify.</p>
+
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="logo-display">
+           <img src="images/logo-full.png" alt="Sakurado full logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+          <div class="logo-info">
+            <div class="logo-name">Full logo</div>
+            <div class="logo-use">Wordmark with wreath emblem. Use on primary packaging, gift boxes, formal materials, hero brand moments.</div>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-display">
+            <img src="images/logo-wordmark.png" alt="Sakurado wordmark" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+          <div class="logo-info">
+            <div class="logo-name">Wordmark</div>
+            <div class="logo-use">Sakura-do with strapline only. Use on website headers, vertical posters, signage, marketing materials with horizontal space.</div>
+          </div>
+        </div>
+
+        <div class="logo-card">
+          <div class="logo-display">
+            <img src="images/logo-emblem.png" alt="Sakurado emblem" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+          <div class="logo-info">
+            <div class="logo-name">Emblem</div>
+            <div class="logo-use">Wreath with S only. Use on social profile pictures, favicons, packaging seals, loyalty programme, small format applications.</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13px; color: var(--text-muted); font-style: italic; margin-top: 1rem;">The logos shown above are simplified illustrative renderings. Use the official files (linked in the Asset Library) for all real applications.</p>
+
+      <h3>Logo colour rules</h3>
+      <p>The logo lives in three approved settings: Sakurado Black on cream or white (default), Sakurado Black on Sakurado Orange (for the signature orange gift box and orange brand collateral), and white on dark or photographic backgrounds (commission a clean white version when needed).</p>
+
+      <h3>Usage rules</h3>
+      <div class="rule">
+        <div class="rule-label">Always</div>
+        <div class="rule-text">Maintain clear space around the logo of at least the height of the "S" character. Use the official files, never recreated or traced. Render at minimum 120px wide on screen, 30mm wide in print.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-label">Never</div>
+        <div class="rule-text">Stretch, rotate, distort, or skew. Recolour to anything other than approved colours. Place on photographic backgrounds without a panel or solid colour. Recreate or trace from a low-res file. Add effects (drop shadow, glow, outline). Modify the wordmark spacing or proportions.</div>
+      </div>
+    </section>
+
+    <section id="colour" class="section">
+      <div class="eyebrow">Visual</div>
+      <h2>The palette.</h2>
+      <p class="lead">A warm, considered palette built around cream, terracotta, and a signature orange. Pantone codes are the source of truth for print. Hex codes are their digital expression.</p>
+
+      <h3>Primary brand colours</h3>
+      <div class="colors-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FFFCF7; border: 1px solid var(--border);"></div>
+          <div class="color-info"><div class="color-name">Sakurado Cream</div><div class="color-codes"><div>Hex #FFFCF7</div><div>RGB 255 252 247</div><div>Pantone TBD</div></div></div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #101820;"></div>
+          <div class="color-info"><div class="color-name">Sakurado Black</div><div class="color-codes"><div>Hex #101820</div><div>RGB 16 24 32</div><div>Pantone Black 2 C</div><div>CMYK 52 91 80 78</div></div></div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #F7902D;"></div>
+          <div class="color-info"><div class="color-name">Sakurado Orange</div><div class="color-codes"><div>Hex #F7902D</div><div>RGB 247 144 45</div><div>Pantone 7413 C</div><div>CMYK 7 57 93 1</div></div></div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #7C3A2D;"></div>
+          <div class="color-info"><div class="color-name">Sakurado Terracotta</div><div class="color-codes"><div>Hex #7C3A2D</div><div>RGB 124 58 45</div><div>Pantone TBD</div></div></div>
+        </div>
+      </div>
+
+      <h3>Secondary palette · digital</h3>
+      <p>Gradient and transition tones used on the website and digital materials.</p>
+      <div class="colors-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FFF4E7; border: 1px solid var(--border);"></div>
+          <div class="color-info"><div class="color-name">Light Peachy</div><div class="color-codes"><div>Hex #FFF4E7</div></div></div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FEDEB5;"></div>
+          <div class="color-info"><div class="color-name">Dark Peachy</div><div class="color-codes"><div>Hex #FEDEB5</div></div></div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FCE9CB;"></div>
+          <div class="color-info"><div class="color-name">Medium Peachy</div><div class="color-codes"><div>Hex #FCE9CB</div></div></div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FDB664;"></div>
+          <div class="color-info"><div class="color-name">Soft Orange</div><div class="color-codes"><div>Hex #FDB664</div></div></div>
+        </div>
+      </div>
+
+      <h3>Seasonal accent · Sakura collection</h3>
+      <p>Used for the Sakura collection, cherry blossom moments, and Mother's Day.</p>
+      <div class="colors-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #F9B5C4;"></div>
+          <div class="color-info"><div class="color-name">Sakura Pink</div><div class="color-codes"><div>Hex #F9B5C4</div></div></div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #F5DADF;"></div>
+          <div class="color-info"><div class="color-name">Light Sakura</div><div class="color-codes"><div>Hex #F5DADF</div></div></div>
+        </div>
+      </div>
+
+      <h3>How the palette works</h3>
+      <p>Sakurado Cream is the everyday background that gives the brand its warmth. Sakurado Black is the default for body text and the logo. Sakurado Terracotta carries headlines and emphasis. Sakurado Orange is the signature accent, used boldly on the gift box, social profile, and campaign moments, and more sparingly elsewhere as a pop of warmth. The pinks are reserved for Sakura collection moments so they retain seasonal meaning.</p>
+
+      <div class="rule">
+        <div class="rule-label">Pantones still to define</div>
+        <div class="rule-text">Pantone references for Sakurado Cream and Sakurado Terracotta are not yet set. When commissioning new print materials in these colours, ask the printer for the closest Pantone match and add it here.</div>
+      </div>
+    </section>
+
+    <section id="typography" class="section">
+      <div class="eyebrow">Visual</div>
+      <h2>Typography.</h2>
+      <p class="lead">Two typefaces work together across Sakurado. A refined serif carries the moments that need atmosphere. A clean sans-serif handles everything functional.</p>
+
+      <h3>Web typography · current</h3>
+      <p>The website currently uses these fonts. Keep this in mind when creating any work that needs to match the live site directly.</p>
+
+      <div class="font-preview">
+        <div class="font-preview-label">Display · Playfair Display</div>
+        <div class="font-preview-display">
+          <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 500; color: var(--terracotta); line-height: 1.05; margin-bottom: 0.75rem;">Mille Crepes</div>
+        </div>
+        <div class="font-preview-meta">Used for: page titles and section headlines on the website. A high-contrast serif with editorial character.</div>
+      </div>
+
+      <div class="font-preview">
+        <div class="font-preview-label">Body · Sofia Sans / Sofia Pro</div>
+        <div class="font-preview-display">
+          <div style="font-family: 'Sofia Sans', sans-serif; font-weight: 300; font-size: 16px; color: var(--text); line-height: 1.7;">Layers of delicate crepe and matcha cream, balanced so the matcha leads. Made fresh in our kitchen each morning.</div>
+        </div>
+        <div class="font-preview-meta">Used for: body text, navigation, buttons, prices, all functional UI. Currently set at a light weight; specific font and weight to be confirmed with web developers.</div>
+      </div>
+
+      <h3>Beyond the website</h3>
+      <p>Social media, packaging, printed collateral, and other surfaces are not bound to the web typography. Typography for these is at the discretion of the designer or content creator working on the project, provided it remains consistent with Sakurado's overall feel: refined, considered, premium-but-warm. The brand voice, colour palette, photography style, and logos remain constant across all surfaces. Typography can flex within that.</p>
+
+      <div class="rule">
+        <div class="rule-label">A note on consistency</div>
+        <div class="rule-text">When work needs to live on or alongside the website (banners, web headers, on-site campaigns), use the web typography above so it sits naturally with the site. For everything else, judgment and craft are trusted.</div>
+      </div>
+    </section>
+
+    <section id="photography" class="section">
+      <div class="eyebrow">Visual</div>
+      <h2>Photography.</h2>
+      <p class="lead">Photography should make you taste through the screen. Eat with your eyes. Texture, light, and intimacy do the work that words cannot.</p>
+
+      <h3>Four pillars</h3>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">Product</h4>
+        <p>Hero category. Studio flat-lays and close-ups on warm peach and cream backgrounds. Texture is the subject. Layers, glaze, crumb, condensation. Cross-sections matter. Close enough to almost touch.</p>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 0;">The existing Sakurado product photography is strong and should continue. Style: bright, evenly lit, minimal props, controlled colour, accurate rendering of greens (matcha) and pinks (sakura, strawberry) so they look the way they actually do in real life.</p>
+      </div>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">People</h4>
+        <p>Mei especially. The team. Customers in the moment. Currently the brand's biggest visual gap. We need a proper portrait of Mei and a small library of her in the kitchen, decorating, talking to customers. Warm, candid, in-context. Never staged or stiff.</p>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 0;">A priority: a half-day shoot with Mei across the central kitchen and one of the cafés. Output: hero portrait, B-roll for content, founder shots usable across web, social, and PR.</p>
+      </div>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">Place</h4>
+        <p>The cafés. Interiors and key details. Atmospheric over architectural. The counter at golden hour. The cake display. Steam rising from a matcha latte. Hands receiving a takeaway box. Photographs that say "you would want to be here."</p>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 0;">Our newest High Street Kensington branch is most on-brand and the natural first focus for shoots. Covent Garden and Gloucester Road are worth capturing too over time, though Gloucester Road tends to be busier inside which makes shooting harder.</p>
+      </div>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">Process</h4>
+        <p>The craft. Mochi being made. Cream being whipped. A cake being decorated. The moment of folding chiffon into batter. Currently underused, hugely powerful for the "made fresh, made by hand" story. Anchors the brand in real work.</p>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 0;">Process content does double duty. Strong stills for web and social, plus moving footage for reels and TikTok. Plan to capture both whenever a shoot happens.</p>
+      </div>
+
+      <h3>Photography style</h3>
+      <div class="rule">
+        <div class="rule-label">Always</div>
+        <div class="rule-text">Texture is the hero. Light hits surfaces deliberately. Colours stay true to life. Cross-sections show what's inside. Negative space gives the subject room to breathe. Slight imperfections (crumb, drip, condensation) signal real, fresh, made-by-hand.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-label">Avoid</div>
+        <div class="rule-text">Phone-shot photography on website or hero placements. Trendy filters that shift hue or wash out warmth. Cluttered backgrounds, busy props, stock-feeling lifestyle shots. Staged "candid" moments. Heavy editing that dates quickly. Black backgrounds. Top-down for everything (mix angles).</div>
+      </div>
+
+      <h3>Bespoke and celebration cake photography</h3>
+      <p>This category deserves its own treatment. These are not retail products to be flat-laid. They are pieces with presence and scale.</p>
+      <ul>
+        <li>Photograph in context. On a cake stand, at a venue, in soft natural light.</li>
+        <li>Capture scale. Show what these cakes look like in the room, not just in isolation.</li>
+        <li>Soft, atmospheric light over hard studio light.</li>
+        <li>Take phone photos of every bespoke piece before it leaves the kitchen. Use AI editing tools to clean and improve them where useful. A proper shoot is better when possible, but day-to-day phone photography is what builds the library.</li>
+      </ul>
+    </section>
+
+    <section id="packaging" class="section">
+      <div class="eyebrow">Application</div>
+      <h2>Packaging.</h2>
+      <p class="lead">Packaging is where Sakurado meets the customer's hands. It is brand and product at once, and one of our strongest assets. Every box should feel like a small gift, even when bought for oneself.</p>
+
+      <h3>Three packaging tiers</h3>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">Tier 1 · Master brand packaging</h4>
+        <p>Signature gift boxes, cake boxes, mille crepe boxes. Cream base with Sakurado Black border, the wordmark, and the wreath emblem. Restrained, ownable, immediately recognisable.</p>
+        <p>Colours: Sakurado Cream, Sakurado Black, Sakurado Orange (for signature gift box).</p>
+      </div>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">Tier 2 · Product-specific packaging</h4>
+        <p>Designed for specific products with their own visual treatment. Each follows brand consistency rules (logo always in Sakurado Black, wordmark or emblem present, type system honoured) but uses a colour palette appropriate to the product.</p>
+        <p>Examples: Matcha Crunch (Pantone 7735 C deep green with gold foil). Cheesecake boxes (Pantone P 17-2 U / P 99-8 U / P 179-2 U).</p>
+      </div>
+
+      <div class="card">
+        <h4 style="color: var(--orange); margin-top: 0;">Tier 3 · Cultural / storytelling packaging</h4>
+        <p>For products with a clear cultural or narrative hook. Layers in Japanese cultural context, characters, language, or folklore. Most adventurous tier visually, but always grounded in real meaning, never decorative borrowing.</p>
+        <p>Example: Tanuki Treats (orange + navy + brown, with Japanese folklore copy and the tanuki character illustration).</p>
+      </div>
+
+      <h3>Packaging principles</h3>
+      <div class="rule">
+        <div class="rule-label">Always</div>
+        <div class="rule-text">The logo appears on every Sakurado package. Sakura-do (with hyphen) is the form used on packaging. Material quality matters. Boxes should feel substantial, never flimsy. Internal details (tissue paper, stickers, thank-you notes) are part of the experience.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-label">Avoid</div>
+        <div class="rule-text">Plain unbranded boxes for paid products. Mismatched colour palettes that don't fit one of the three tiers. Logo-free secondary packaging for premium items. Material downgrades that compromise the unboxing moment.</div>
+      </div>
+    </section>
+
+    <section id="in-store" class="section">
+      <div class="eyebrow">Application</div>
+      <h2>The in-store experience.</h2>
+      <p class="lead">The cafés are where most customers meet Sakurado. The brand should be felt the moment someone steps inside, before they have ordered anything.</p>
+
+      <h3>Greeting · "Irrasshaimase"</h3>
+      <p>Every customer who walks into a Sakurado café is greeted with <em>"irrasshaimase"</em> (or the shortened <em>"irrashai"</em>). This is a Japanese custom of welcome, used in shops, restaurants, and cafés across Japan. It tells the customer: you are seen, you are welcome, you have entered somewhere that takes hospitality seriously.</p>
+      <p>This is a small detail that does enormous brand work. It signals authenticity, warmth, and care. It is non-negotiable. Every staff member, every shift, every customer.</p>
+
+      <div class="rule">
+        <div class="rule-label">For new staff</div>
+        <div class="rule-text">"Irrasshaimase" is pronounced <em>ee-rah-shai-mah-seh</em>. The short form "irrashai" is <em>ee-rah-shai</em>. New staff should be coached on the pronunciation and the warmth behind it. It is a greeting, not a script. Said with eye contact and a small smile, not chanted automatically.</div>
+      </div>
+
+      <h3>Display</h3>
+      <p>The cake counter is the visual heart of every café. It should always look full, fresh, and beautifully arranged. Keep counters as bare as possible so the cakes themselves are the focus. Minimise plastic signs, paper notices, and clutter. Where signage is needed, it should be considered and on-brand. A half-empty or visually busy counter undermines the brand promise of fresh and abundant.</p>
+
+      <h3>Atmosphere</h3>
+      <ul>
+        <li><strong>Music.</strong> A chilled café playlist that suits premium-but-warm. Quiet enough not to compete with conversation.</li>
+        <li><strong>Scent.</strong> The café should smell of what is being made: cake, sugar, matcha, coffee. No artificial scents. The kitchen smells are the right brand smells.</li>
+        <li><strong>Tableware.</strong> Where ceramics are used in-store, they should match the brand aesthetic. Considered, refined, never disposable-looking.</li>
+      </ul>
+    </section>
+
+    <section id="naming" class="section">
+      <div class="eyebrow">Application</div>
+      <h2>Naming &amp; conventions.</h2>
+      <p class="lead">Small details that, when consistent, make the brand feel disciplined.</p>
+
+      <h3>Sakurado vs Sakura-do</h3>
+      <table class="data-table">
+        <tbody>
+          <tr><td><strong>Sakura-do</strong> (with hyphen)</td><td>Display use. Logos, packaging, signage, headers, hero moments.</td></tr>
+          <tr><td><strong>Sakurado</strong> (no hyphen)</td><td>Running text. Body copy, captions, navigation, story, product descriptions, emails.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Mei in writing</h3>
+      <table class="data-table">
+        <tbody>
+          <tr><td>First mention in standalone content</td><td>"our founder Mei"</td></tr>
+          <tr><td>Subsequent mentions</td><td>"Mei"</td></tr>
+          <tr><td>Personal/founder voice content</td><td>"Mei" from the start</td></tr>
+          <tr><td>Surname</td><td>First name only across all customer-facing content. Mei Xu when a full name is required (press, formal bios, legal contexts).</td></tr></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Café locations</h3>
+      <p>Sakurado has five cafés across London. Each can be referred to formally or casually depending on the context.</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Formal name</th><th>Casual reference</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sakurado Soho</td><td>our Soho café</td></tr>
+          <tr><td>Sakurado Covent Garden</td><td>our Covent Garden café</td></tr>
+          <tr><td>Sakurado Gloucester Road</td><td>our Gloucester Road café</td></tr>
+          <tr><td>Sakurado High Street Kensington</td><td>our High Street Kensington café</td></tr>
+          <tr><td>Sakurado Vauxhall</td><td>our Vauxhall café</td></tr>
+        </tbody>
+      </table>
+      <p>Use formal names for navigation, location lists, addresses, and structured information. Use casual references in flowing prose, social posts, and conversational copy.</p>
+<p>Internally we refer to branches by initials: SSA (Soho), CG (Covent Garden), HSK (High Street Kensington), GR (Gloucester Road), VXL (Vauxhall). Useful in operational contexts and team communications.</p>
+<p>Use "café" as the default term in customer-facing copy (warm and accessible). Use "patisserie" occasionally for variation or when a more refined register is wanted. Use "branch" or "location" in operational and structured contexts. Avoid "store" and "outlet" — they're the wrong category for what we are.</p>
+      <h3>Product names</h3>
+      <table class="data-table">
+        <tbody>
+          <tr><td>When the product is the subject</td><td>Title Case ("Matcha Mille Crepe", "Bear Custard Choux")</td></tr>
+          <tr><td>In flowing prose</td><td>Lowercase ("she's known for her matcha mille crepes")</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Japanese characters</h3>
+      <p>The Japanese characters さくら堂 (Sakurado) appear on storefront fascias and may be used as a decorative or cultural detail elsewhere (packaging interiors, seasonal collateral). Never use them as primary identification.</p>
+    </section>
+
+    <section id="taglines" class="section">
+      <div class="eyebrow">Application</div>
+      <h2>Brand lines.</h2>
+      <p class="lead">Sakurado does not have a single tagline. Instead, a vocabulary of recurring brand lines, each suited to a different context. Used together over time, they build the brand voice without locking into one slogan.</p>
+
+      <div class="tagline-card">
+        <div class="tagline-display">"A patisserie of balance."</div>
+        <div class="tagline-context"><strong>Use for:</strong> About page intros, brand book covers, press, stationery, formal positioning. The most considered, atmospheric line.</div>
+      </div>
+
+      <div class="tagline-card">
+        <div class="tagline-display">"Never too sweet."</div>
+        <div class="tagline-context"><strong>Use for:</strong> Recurring brand truth. Packaging, social bios, occasional copy moments, signage. A signature phrase that should appear often enough to become recognisable, without being on everything.</div>
+      </div>
+
+      <div class="tagline-card">
+        <div class="tagline-display">"Made fresh in London. Never too sweet."</div>
+        <div class="tagline-context"><strong>Use for:</strong> Short brand introduction. Social bios, ad copy, listings, places where one line has to do positioning work.</div>
+      </div>
+
+      <div class="tagline-card">
+        <div class="tagline-display">"A family-run Japanese patisserie."</div>
+        <div class="tagline-context"><strong>Use for:</strong> Functional descriptor. Press releases, business listings, formal "about" lines.</div>
+      </div>
+
+      <div class="tagline-card">
+        <div class="tagline-display">"House of cherry blossoms."</div>
+        <div class="tagline-context"><strong>Use for:</strong> Atmospheric, poetic moments. Sakura collection, story content, the deepest expression of the brand.</div>
+      </div>
+    </section>
+
+    <section id="assets" class="section">
+      <div class="eyebrow">Resources</div>
+      <h2>Asset library.</h2>
+      <p class="lead">The files everyone needs in one place. Logos, photography, press materials. Hosted in a shared folder linked below.</p>
+
+      <h3>How this works</h3>
+      <p>Brand files live in a shared cloud folder (Google Drive or Dropbox), not inside this brand book itself. To set this up: create a "Sakurado Brand Assets" folder, upload the files listed below, set sharing to "Anyone with the link can view," and replace the link placeholders below with the real folder URLs.</p>
+
+      <p>Anyone you give the brand book to can then click straight through to download what they need.</p>
+
+      <h3>Logos</h3>
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Full logo, wordmark, emblem</div>
+      <a href="https://drive.google.com/drive/folders/1q3d4VaNHawL4HgANw5zXSyiql0NH3dim?usp=drive_link" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #F7902D; color: white; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em;">Open logo files in Drive →</a></div>
+
+      <h3>Colour palette</h3>
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Colour codes</div>
+        <div class="asset-placeholder-desc">All hex codes, Pantone references, and CMYK values are documented in the Colour section above. Designers and printers can copy them directly. No separate file needed at this stage.</div>
+      </div>
+
+      <h3>Typography</h3>
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Web fonts</div>
+        <div class="asset-placeholder-desc">Playfair Display and Sofia Sans (or Sofia Pro, to confirm with web team) are the current web fonts. Both available via Google Fonts. Designers can grab them directly when needed.</div>
+      </div>
+
+      <h3>Press kit · to develop</h3>
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Sakurado one-pager</div>
+        <div class="asset-placeholder-desc">A short PDF for press enquiries with founder story, key brand facts, hero photography, and contact details. To be created.</div>
+      </div>
+
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Founder bio · Mei Xu</div>
+        <div class="asset-placeholder-desc">A short formal biography of Mei Xu for press, awards submissions, speaker introductions. To be drafted.</div>
+      </div>
+
+      <h3>Photography library · to build</h3>
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Hero portrait · Mei</div>
+        <div class="asset-placeholder-desc">First priority shoot. To be commissioned.</div>
+      </div>
+
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Café interiors</div>
+        <div class="asset-placeholder-desc">Each café, starting with High Street Kensington. To be commissioned over the next quarter.</div>
+      </div>
+
+      <div class="asset-placeholder">
+        <div class="asset-placeholder-label">Bespoke / wedding portfolio</div>
+        <div class="asset-placeholder-desc">Curated selection of standout celebration cakes from past commissions. To be selected and uploaded.</div>
+      </div>
+
+      <h3>How to update this brand book</h3>
+      <p>This is a single HTML file that opens in any browser. To make small text edits, open the file in any text editor (VS Code, TextEdit in plain text mode, or even Notes), find the text you want to change, edit, save, and reload in your browser. For larger structural changes, ask Emily.</p>
+
+      <div class="rule">
+        <div class="rule-label">Version note</div>
+        <div class="rule-text">This is v1.0, built in May 2026. It captures the brand strategy, voice, visual identity, and application guidelines as of this date. As Sakurado evolves, so will this document.</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('.version-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const version = tab.dataset.version;
+      document.querySelectorAll('.version-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.version-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.version-content[data-version="${version}"]`).classList.add('active');
+    });
+  });
+
+  const sections = document.querySelectorAll('.section, .hero');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+  function updateActiveNav() {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top < 200) current = section.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav();
+</script>
+
+</body>
+</html>
